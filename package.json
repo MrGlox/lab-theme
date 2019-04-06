@@ -8,10 +8,12 @@
     "type": "git",
     "url": "https://github.com/MrGlox/lab-theme"
   },
-  "licenses": [{
-    "type": "MIT",
-    "url": "http://opensource.org/licenses/MIT"
-  }],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
   "browserslist": [
     "last 2 versions",
     "android 4",
@@ -74,6 +76,7 @@
     "baffle": "^0.3.6",
     "bootstrap": "v4.3.1",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.7"
+    "popper.js": "^1.14.7",
+    "susy": "^3.0.5"
   }
 }
