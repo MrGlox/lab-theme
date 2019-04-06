@@ -1,22 +1,17 @@
 {
-  "name": "sage",
+  "name": "mrglox-lab-theme",
   "version": "9.0.9",
-  "author": "Roots <team@roots.io>",
-  "homepage": "https://roots.io/sage/",
+  "author": "MrGlox <mrglox.io>",
+  "homepage": "https://morgan-leroux.com/",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/roots/sage.git"
+    "url": "https://github.com/MrGlox/lab-theme"
   },
-  "bugs": {
-    "url": "https://github.com/roots/sage/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
-    }
-  ],
+  "licenses": [{
+    "type": "MIT",
+    "url": "http://opensource.org/licenses/MIT"
+  }],
   "browserslist": [
     "last 2 versions",
     "android 4",
@@ -76,6 +71,7 @@
     "yargs": "~11.0.0"
   },
   "dependencies": {
+    "baffle": "^0.3.6",
     "bootstrap": "v4.3.1",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.7"
