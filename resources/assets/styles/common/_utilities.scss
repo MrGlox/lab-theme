@@ -16,6 +16,15 @@
   width: 1px;
 }
 
+//hide overlay when loadCSS function async load style and font css
+.cssloading__overlay {
+	z-index: -$zindex*2;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	visibility:hidden;
+}
+
 @function z($name) {
   @if index($z-indexes, $name) {
     @return (length($z-indexes) - index($z-indexes, $name))+1;
@@ -28,7 +37,8 @@
   }
 }
 
-$z-indexes: ("header",
-"main__content",
-"footer"
+$z-indexes: (
+  "header",
+  "main__content",
+  "footer"
 );

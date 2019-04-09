@@ -1,27 +1,22 @@
-@import "common/variables";
-@import "common/global";
-
-/** Import everything from autoload */
-@import "./autoload/**/*";
-
-/**
- * Import npm dependencies
- *
- * Prefix your imports with `~` to grab from node_modules/
- * @see https://github.com/webpack-contrib/sass-loader#imports
- */
+/** Import npm dependencies */
 @import "~susy/sass/susy";
+@import "~susy/sass/plugins/svg-grid/prefix";
 
-/** Import theme components */
-@import "components/buttons";
-@import "components/comments";
-@import "components/forms";
-@import "components/wp-classes";
+/** Import root elements */
+@import "root/config.scss";
 
-/** Import theme layouts */
-@import "layouts/header";
-@import "layouts/sidebar";
-@import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
-@import "layouts/tinymce";
+/** Import root elements */
+@import "common/normalize.scss";
+@import "common/mixins.scss";
+@import "common/variables.scss";
+@import "common/global.scss";
+@import "common/fonts.scss";
+@import "common/utilities.scss";
+
+/** Import everything from each folders */
+@import "./components/**/*";
+@import "./layouts/**/*";
+@import "./patterns/**/*";
+@import "./pages/**/*";
+
+

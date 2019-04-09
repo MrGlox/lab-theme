@@ -1,10 +1,90 @@
 /**
  * Susy layout
- * Go to _layouts.scss for example
+ * Go to layouts/_default.scss for example
  */
-$susy: ( //debug :(image: show-columns),
-global-box-sizing: border-box,
-columns: 12,
-column-width: 60px,
-gutters: 20px/60px,
-container: 960px);
+$susy: (
+	debug: (image: show-columns),
+	'min-width': 0px,
+	'columns': susy-repeat(12),
+	'gutters': 0.25,
+	'spread': 'wide',
+	'container-spread': 'wider',
+);
+
+// From 480px and more
+$md: (
+	'min-width': 768px,
+	'columns': susy-repeat(12)
+);
+
+// From 1240px and more
+$lg: (
+	'min-width': 1240px,
+	'columns': susy-repeat(24)
+);
+
+/**
+ * Responsive breakpoints
+ */
+
+ $breakpoints: (
+	xsm: em(480),
+	sm: em(768),
+	md: em(1024),
+	lg: em(1260),
+	xlg: em(1440)
+);
+
+@mixin breakpoints($breakpoint) {
+	@media screen and (min-width: map-get($map: $breakpoints, $key: $breakpoint)) {
+		@content;
+	}
+}
+
+@mixin container {
+	max-width: 950px + $space-xs*2;
+	width: 100%;
+	padding: 0 $space-xs;
+	margin: 0 auto;
+	background: susy-svg-grid() no-repeat scroll;
+}
+
+/**
+ * Span mixins
+ */
+@mixin span($span, $config: $susy) {
+	width: span($span, $config);
+
+	@if index($span, 'last') {
+		float: right;
+		// margin-right: 0; if you want an explicit reset
+	} @else {
+		float: left;
+		margin-right: gutter();
+	}
+}
+
+/**
+ * Susy mixins
+ */
+@mixin susy-use($config) {
+	$config: susy-compile($config);
+	$global: $susy;
+	$susy: map-merge($susy, $config) !global;
+	$susy: $global !global;
+
+	@content;
+}
+
+@mixin media($config) {
+	$config: susy-compile($config);
+	$min: map-get($config, 'min-width');
+	$min: if($min, '(min-width: #{$min})', null);
+	$query: $min;
+
+	@media #{$query} {
+		@include susy-use($config) {
+			@content;
+		}
+	}
+}

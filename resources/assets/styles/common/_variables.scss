@@ -1,26 +1,29 @@
 /**
  * Main colors
  */
-$maincolor: #F1E25B;
+$primary: #F1E25B;
+$secondary: #F1E25B;
+$third: #F1E25B;
+
 $textcolor: #333;
 
 /**
-   * Light and Dark colors
-   */
+ * Light and Dark colors
+ */
 $lightcolor: #fff;
 $darkcolor: #000;
 
 /**
-   * Grey colors
-   */
+ * Grey colors
+ */
 $maingrey: #ddd;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 
 /**
-   * Contextual colors
-   */
+ * Contextual colors
+ */
 $errorcolor-1 : #8a1f11;
 $errorcolor-2 : #fbe3e4;
 
@@ -41,37 +44,29 @@ $theme-colors: (primary: #525ddc);
 $zindex: 1;
 
 /**
-  * Spacing
-  */
-$base-spacing: 20px;
-$half-base-spacing: $base-spacing / 2;
+ * Spacing
+ */
+$space: 30px;
+
+$space-xxxl: $space*6; // 180px
+$space-xxl: $space*3; // 90px
+$space-xl: $space*2; // 60px
+$space-l: $space/2*3; // 45px
+$space-s: $space*2/3; // 20px
+$space-xs: $space/2; // 15px
+$space-xxs: $space/3; // 10px
+$space-xxxs: $space/6; // 5px
 
 /**
  * Border
  */
-$base-border-color: $light-gray;
+$border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
 
 /**
  * Border Radius
  */
 $base-border-radius: 3px;
-
-/**
- * Responsive breakpoints
- */
-
-$breakpoints: (xsm: em(480),
-sm: em(768),
-md: em(1024),
-lg: em(1260),
-xlg: em(1440));
-
-@mixin breakpoints($breakpoint) {
-  @media screen and (min-width: map-get($map: $breakpoints, $key: $breakpoint)) {
-    @content;
-  }
-}
 
 /**
  * Font Family
@@ -82,19 +77,20 @@ sans-serif;
 $font-serif: Times,
 Georgia,
 serif;
+
 $customfont-1: Roboto,
 sans-serif;
 $customfont-2: Circular,
 sans-serif;
 
 /**
-  * Font Size
-  */
+ * Font Size
+ */
 $base-fz: 16px;
 $heading-font-size: 25px;
 
 /**
-  * Line Height
-  */
+ * Line Height
+ */
 $base-lh: 1.4;
 $heading-line-height: 1.2;

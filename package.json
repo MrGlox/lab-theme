@@ -1,6 +1,6 @@
 {
   "name": "mrglox-lab-theme",
-  "version": "9.0.9",
+  "version": "0.0.1",
   "author": "MrGlox <mrglox.io>",
   "homepage": "https://morgan-leroux.com/",
   "private": true,
@@ -75,7 +75,6 @@
   "dependencies": {
     "baffle": "^0.3.6",
     "bootstrap": "v4.3.1",
-    "jquery": "^3.3.1",
     "popper.js": "^1.14.7",
     "susy": "^3.0.5"
   }

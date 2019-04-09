@@ -1,27 +1,3 @@
-/**
- * @section Typography
- * @page index
- *
- * @example
- * <div class="row">
- * <div class="col-6">
- * <h1 class="font--title">Circular</h1>
- * <h1>Level 1 Heading</h1>
- * <h2>Level 2 Heading</h2>
- * <h3>Level 3 Heading</h3>
- * <h4>Level 4 Heading</h4>
- * <h5>Level 5 Heading</h5>
- * <h6>Level 6 Heading</h6>
- * </div>
- * <div class="col-6">
- * <h1 class="font--title">Roboto</h1>
- * <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur quam augue, vehicula quis, tincidunt vel, varius vitae, nulla.</p>
- * <p class="font--italic">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur quam augue, vehicula quis, tincidunt vel, varius vitae, nulla.</p>
- * <p class="font--bold">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur quam augue, vehicula quis, tincidunt vel, varius vitae, nulla.</p>
- * </div>
- * </div>
- */
-
 body {
   font-size: $base-fz;
   line-height: $base-lh;
@@ -31,8 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 
-  //Fonts loading FOUT
-  //Adjust FOUT with tools like https://meowni.ca/font-style-matcher/
   .fonts-loading & {
     font-family: $font-sansserif;
   }
@@ -93,7 +67,7 @@ table,
 address,
 fieldset,
 figure {
-  margin: 0 0 $base-spacing 0;
+  margin: 0 0 $space 0;
 }
 
 /* Wysiwyg style
@@ -103,13 +77,13 @@ hr {
   border: 0;
   height: 1px;
   background: $maingrey;
-  margin: $base-spacing 0;
+  margin: $space 0;
 }
 
 blockquote {
   border-left: 5px solid $maingrey;
-  padding: $base-spacing;
-  margin: 0 0 $base-spacing 0;
+  padding: $space;
+  margin: 0 0 $space 0;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
 
@@ -127,7 +101,7 @@ small {
 }
 
 table {
-  margin: $base-spacing 0;
+  margin: $space 0;
   width: 100%;
   border: $base-border;
   border-collapse: collapse;
@@ -135,7 +109,7 @@ table {
   border-radius: $base-border-radius;
 
   th {
-    padding: $half-base-spacing;
+    padding: $space-xs;
     border-left: 1px solid $base-border-color;
     border-top: 0;
     vertical-align: top;
@@ -143,7 +117,7 @@ table {
   }
 
   td {
-    padding: $half-base-spacing;
+    padding: $space-xs;
     border-top: 1px solid $base-border-color;
     border-left: 1px solid $base-border-color;
     vertical-align: top;
@@ -153,7 +127,7 @@ table {
 
 address {
   display: block;
-  margin-bottom: $base-spacing;
+  margin-bottom: $space;
   font-style: normal;
   line-height: 20px;
 }
@@ -206,8 +180,8 @@ samp {
 
 pre {
   display: block;
-  padding: $half-base-spacing;
-  margin: 0 0 $base-spacing;
+  padding: $space-xs;
+  margin: 0 0 $space;
   @include word-wrap(break-all);
   white-space: pre-wrap;
   background-color: $maingrey;

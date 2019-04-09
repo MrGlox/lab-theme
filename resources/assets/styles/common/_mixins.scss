@@ -1,16 +1,8 @@
 /**
  * 1. Font and Wording
- * 2. Images
- * 3. Forms
- * 4. Miscellaneous
  */
 
-
-/**
- * 1. Font and Wording
- */
-
-// FontFace. GO to root/_fonts.scss to see it in action
+// FontFace. GO to common/_fonts.scss to see it in action
 @mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
   @font-face {
     font-family: '#{$font-family}';
@@ -67,6 +59,17 @@
 /**
  * 3. Forms
  */
+@function assign-inputs($inputs, $pseudo: null) {
+  $list: ();
+
+  @each $input in $inputs {
+    $input: unquote($input);
+    $input: if($pseudo, $input + ":" + $pseudo, $input);
+    $list: append($list, $input, comma);
+  }
+
+  @return $list;
+}
 
 // Mixin for custom checkbox
 @mixin checkbox--custom($color: $maincolor, $size: 1em, $border-width: 2px) {
@@ -125,7 +128,7 @@
   font-size: 16px; // prevent iOS zoom
   color: $textcolor;
   line-height: 1.15;
-  padding: $half-base-spacing $half-base-spacing*3 $half-base-spacing $half-base-spacing;
+  padding: $space-xs $space-xs*3 $space-xs $space-xs;
   width: 100%;
   max-width: 100%;
   /* useful when width is set to anything other than 100% */
@@ -134,7 +137,7 @@
   border-radius: 0;
   appearance: none;
   background-color: $lightcolor;
-  background-image: url('#{$src-url}/img/icons/down.svg'),
+  background-image: url('#{$icons}/down.svg'),
   linear-gradient(to bottom, $lightcolor 0%, $lightcolor 100%);
   background-repeat: no-repeat, repeat;
   background-position: right 10px top 50%, 0 0;
@@ -215,7 +218,7 @@
 
 // Card base
 @mixin card {
-  padding: $base-spacing;
+  padding: $space;
   box-shadow: 0 2px 4px rgba($darkcolor, .25);
 }
 
@@ -224,11 +227,11 @@
   float: $direction;
 
   @if ($direction==left) {
-    margin-right: $base-spacing;
+    margin-right: $space;
   }
 
   @else {
-    margin-left: $base-spacing;
+    margin-left: $space;
   }
 }
 
