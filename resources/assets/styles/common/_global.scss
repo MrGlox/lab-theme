@@ -11,17 +11,17 @@ $susy: (
 	'container-spread': 'wider',
 );
 
-// From 768px and more
-$sm: (
-	'min-width': em(768px),
-	'columns': susy-repeat(12)
-);
+// // From 768px and more
+// $sm: (
+// 	'min-width': em(768px),
+// 	'columns': susy-repeat(12)
+// );
 
-// From 1240px and more
-$md: (
-	'min-width': em(1240),
-	'columns': susy-repeat(24)
-);
+// // From 1240px and more
+// $md: (
+// 	'min-width': em(1240),
+// 	'columns': susy-repeat(24)
+// );
 
 // /**
 //  * Responsive breakpoints
@@ -47,43 +47,43 @@ $md: (
 	margin: 0 auto;
 }
 
-/**
- * Span mixins
- */
-@mixin span($span, $config: $susy) {
-	width: span($span, $config);
+// /**
+//  * Span mixins
+//  */
+// @mixin span($span, $config: $susy) {
+// 	width: span($span, $config);
 
-	@if index($span, 'last') {
-		float: right;
-		// margin-right: 0; if you want an explicit reset
-	} @else {
-		float: left;
-		margin-right: gutter();
-	}
-}
+// 	@if index($span, 'last') {
+// 		float: right;
+// 		// margin-right: 0; if you want an explicit reset
+// 	} @else {
+// 		float: left;
+// 		margin-right: gutter();
+// 	}
+// }
 
-/**
- * Susy mixins
- */
-@mixin susy-at($config) {
-  $config: susy-compile($config);
-  $global: $susy;
-	$susy: map-merge($susy, $config) !global;
+// /**
+//  * Susy mixins
+//  */
+// @mixin susy-at($config) {
+//   $config: susy-compile($config);
+//   $global: $susy;
+// 	$susy: map-merge($susy, $config) !global;
 
-  @content;
+//   @content;
 
-	$susy: $global !global;
-}
+// 	$susy: $global !global;
+// }
 
-@mixin breakpoints($config) {
-	$config: susy-compile($config);
-	$min: map-get($config, 'min-width');
-	$min: if($min, '(min-width: #{$min})', null);
-	$query: $min;
+// @mixin breakpoints($config) {
+// 	$config: susy-compile($config);
+// 	$min: map-get($config, 'min-width');
+// 	$min: if($min, '(min-width: #{$min})', null);
+// 	$query: $min;
 
-	@media #{$query} {
-		@include susy-at($config) {
-			@content;
-		}
-	}
-}
+// 	@media #{$query} {
+// 		@include susy-at($config) {
+// 			@content;
+// 		}
+// 	}
+// }

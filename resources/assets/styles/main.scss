@@ -1,6 +1,5 @@
 /** Import npm dependencies */
 @import "~susy/sass/susy";
-@import "~susy/sass/plugins/svg-grid/prefix";
 
 /** Import root elements */
 @import "root/config.scss";
@@ -14,7 +13,7 @@
 @import "common/utilities.scss";
 
 /** Import everything from each folders */
-// @import "./components/**/*";
+@import "./components/**/*";
 @import "./layouts/**/*";
-// @import "./patterns/**/*";
-// @import "./pages/**/*";
+@import "./patterns/**/*";
+@import "./pages/**/*";
