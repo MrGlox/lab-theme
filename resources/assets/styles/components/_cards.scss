@@ -1,6 +1,6 @@
 @mixin card($flexDirection: column, $thumbnailWidth : 300px) {
   display: flex;
-  border: $base-border;
+  border: $brd;
   flex-direction: $flexDirection;
   margin: 0 auto;
 
@@ -46,7 +46,7 @@
   }
 
   #{$parent}__content {
-    padding: $space;
+    padding: $sp;
 
     p {
       &:last-child {

@@ -1,8 +1,8 @@
 .message {
-  border-left: 5px solid $maincolor;
-  color: $maincolor;
-  padding: $space;
-  margin: 0 0 $space;
+  border-left: 5px solid $primary;
+  color: $primary;
+  padding: $sp;
+  margin: 0 0 $sp;
 
   p:last-child {
     margin: 0;
@@ -14,26 +14,26 @@
 
   &--error,
   &--alert {
-    color: $errorcolor-1;
-    background: $errorcolor-2;
-    border-color: $errorcolor-1;
+    color: $error;
+    background: $error--second;
+    border-color: $error;
   }
 
   &--notice {
-    color: $noticecolor-1;
-    background: $noticecolor-2;
-    border-color: $noticecolor-1;
+    color: $notice;
+    background: $notice--second;
+    border-color: $notice;
   }
 
   &--success {
-    color: $successcolor-1;
-    background: $successcolor-2;
-    border-color: $successcolor-1;
+    color: $success;
+    background: $success--second;
+    border-color: $success;
   }
 
   &--info {
-    color: $infocolor-1;
-    background: $infocolor-2;
-    border-color: $infocolor-1;
+    color: $info;
+    background: $info--second;
+    border-color: $info;
   }
 }

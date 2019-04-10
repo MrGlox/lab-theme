@@ -5,15 +5,17 @@
 // FontFace. GO to common/_fonts.scss to see it in action
 @mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
   @font-face {
-    font-family: '#{$font-family}';
-    font-weight: $font-weight;
-    font-style: $font-style;
-    font-stretch: $font-stretch;
-    font-display: swap;
-    src: url(#{$font-filename}.woff2) format('woff2'),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url(#{$font-filename}.woff) format('woff');
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    :global {
+      font-family: '#{$font-family}';
+      font-weight: $font-weight;
+      font-style: $font-style;
+      font-stretch: $font-stretch;
+      font-display: swap;
+      src: url("#{$font-filename}.woff2") format('woff2'),
+      /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("#{$font-filename}.woff") format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
   }
 }
 
@@ -72,7 +74,7 @@
 }
 
 // Mixin for custom checkbox
-@mixin checkbox--custom($color: $maincolor, $size: 1em, $border-width: 2px) {
+@mixin checkbox--custom($color: $primary, $size: 1em, $border-width: 2px) {
   margin-bottom: 20px;
 
   input[type="checkbox"],
@@ -128,7 +130,7 @@
   font-size: 16px; // prevent iOS zoom
   color: $textcolor;
   line-height: 1.15;
-  padding: $space-xs $space-xs*3 $space-xs $space-xs;
+  padding: $spxs $spxs*3 $spxs $spxs;
   width: 100%;
   max-width: 100%;
   /* useful when width is set to anything other than 100% */
@@ -218,7 +220,7 @@
 
 // Card base
 @mixin card {
-  padding: $space;
+  padding: $sp;
   box-shadow: 0 2px 4px rgba($darkcolor, .25);
 }
 
@@ -227,17 +229,17 @@
   float: $direction;
 
   @if ($direction==left) {
-    margin-right: $space;
+    margin-right: $sp;
   }
 
   @else {
-    margin-left: $space;
+    margin-left: $sp;
   }
 }
 
 //fullwidth row
 @mixin row--fullwidth($position: relative) {
-  z-index: $zindex;
+  z-index: $zi;
   position: $position;
   width: 100vw;
   left: 50%;

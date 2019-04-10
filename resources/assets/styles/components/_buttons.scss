@@ -62,7 +62,7 @@
 
 // Border Radius
 @mixin button--round {
-  border-radius: $base-border-radius;
+  border-radius: $br;
 }
 
 @mixin button--circle($size: 50px) {
@@ -121,46 +121,46 @@
   }
 
   &--primary {
-    @include button--colored($maincolor, $textcolor);
+    @include button--colored($primary, $textcolor);
   }
 
   &--error {
-    @include button--colored($errorcolor-2, $errorcolor-1);
+    @include button--colored($error--second, $error);
   }
 
   &--warning {
-    @include button--colored($noticecolor-2, $noticecolor-1);
+    @include button--colored($notice--second, $notice);
   }
 
   &--success {
-    @include button--colored($successcolor-2, $successcolor-1);
+    @include button--colored($success--second, $success);
   }
 
   &--info {
-    @include button--colored($infocolor-2, $infocolor-1);
+    @include button--colored($info--second, $info);
   }
 
   &--outline {
     @include button--outline;
 
     &#{$parent}--primary {
-      @include button--outline($maincolor, $textcolor);
+      @include button--outline($primary, $textcolor);
     }
 
     &#{$parent}--error {
-      @include button--outline($errorcolor-2, $errorcolor-1);
+      @include button--outline($error--second, $error);
     }
 
     &#{$parent}--warning {
-      @include button--outline($noticecolor-2, $noticecolor-1);
+      @include button--outline($notice--second, $notice);
     }
 
     &#{$parent}--success {
-      @include button--outline($successcolor-2, $successcolor-1);
+      @include button--outline($success--second, $success);
     }
 
     &#{$parent}--info {
-      @include button--outline($infocolor-2, $infocolor-1);
+      @include button--outline($info--second, $info);
     }
   }
 
@@ -184,19 +184,19 @@
     @include button--disabled;
 
     &#{$parent}--error {
-      @include button--disabled($errorcolor-2);
+      @include button--disabled($error--second);
     }
 
     &#{$parent}--warning {
-      @include button--disabled($noticecolor-2);
+      @include button--disabled($notice--second);
     }
 
     &#{$parent}--success {
-      @include button--disabled($successcolor-2);
+      @include button--disabled($success--second);
     }
 
     &#{$parent}--info {
-      @include button--disabled($infocolor-2);
+      @include button--disabled($info--second);
     }
   }
 }

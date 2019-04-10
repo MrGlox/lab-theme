@@ -1,96 +1,96 @@
 /**
  * Main colors
  */
-$primary: #F1E25B;
-$secondary: #F1E25B;
-$third: #F1E25B;
+$primary: #4614D6;
+$primary--saturated: #3CFAFE;
 
-$textcolor: #333;
+$second: #FF7E49;
+$second--lighter: #FF973D;
+$second--saturated: #FFC649;
+$second--darker: #F94F4F;
+
+$third: #EB2678;
+$third--saturated: #FC08F8;
+$third--darker: #994BF6;
+
 
 /**
  * Light and Dark colors
  */
-$lightcolor: #fff;
-$darkcolor: #000;
+$lightcolor: #EFEFEF;
+$darkcolor: #060826;
+$textcolor: $lightcolor;
 
 /**
  * Grey colors
  */
 $maingrey: #ddd;
-$dark-gray: #333;
-$medium-gray: #999;
-$light-gray: #ddd;
+$darkgrey: #333;
+$mediumgrey: #999;
+$lightgrey: #ddd;
 
 /**
  * Contextual colors
  */
-$errorcolor-1 : #8a1f11;
-$errorcolor-2 : #fbe3e4;
+$error: #8a1f11;
+$error--second : #fbe3e4;
 
-$noticecolor-1 : #514721;
-$noticecolor-2 : #fff6bf;
+$notice: #514721;
+$notice--second : #fff6bf;
 
-$successcolor-1 : #264409;
-$successcolor-2 : #e6efc2;
+$success: #264409;
+$success--second : #e6efc2;
 
-$infocolor-1 : #205791;
-$infocolor-2 : #d5edf8;
-
-$theme-colors: (primary: #525ddc);
+$info: #205791;
+$info--second : #d5edf8;
 
 /**
  * Positioning
  */
-$zindex: 1;
+$zi: 1;
 
 /**
  * Spacing
  */
-$space: 30px;
+$sp: 30px;
 
-$space-xxxl: $space*6; // 180px
-$space-xxl: $space*3; // 90px
-$space-xl: $space*2; // 60px
-$space-l: $space/2*3; // 45px
-$space-s: $space*2/3; // 20px
-$space-xs: $space/2; // 15px
-$space-xxs: $space/3; // 10px
-$space-xxxs: $space/6; // 5px
+$spxxxl: $sp*6; // 180px
+$spxxl: $sp*3; // 90px
+$spxl: $sp*2; // 60px
+$spl: $sp/2*3; // 45px
+$sps: $sp*2/3; // 20px
+$spxs: $sp/2; // 15px
+$spxxs: $sp/3; // 10px
+$spxxxs: $sp/6; // 5px
 
 /**
  * Border
  */
-$border-color: $light-gray;
-$base-border: 1px solid $base-border-color;
+$brdc: $lightgrey;
+$brd: 1px solid $brdc;
 
 /**
  * Border Radius
  */
-$base-border-radius: 3px;
+$br: 3px;
 
 /**
  * Font Family
  */
-$font-sansserif: Arial,
-Helvetica,
-sans-serif;
-$font-serif: Times,
-Georgia,
-serif;
+$sans-serif: Arial, Helvetica, sans-serif;
+$serif: Times, Georgia, serif;
 
-$customfont-1: Roboto,
-sans-serif;
-$customfont-2: Circular,
-sans-serif;
+$mainfont: Roboto, sans-serif;
+$subfont: Circular, sans-serif;
 
 /**
  * Font Size
  */
-$base-fz: 16px;
-$heading-font-size: 25px;
+$fsz: 16px;
+$hfsz: 25px;
 
 /**
  * Line Height
  */
-$base-lh: 1.4;
-$heading-line-height: 1.2;
+$lh: 1.4;
+$hlh: 1.2;

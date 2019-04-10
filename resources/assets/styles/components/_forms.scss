@@ -23,7 +23,7 @@ textarea {
   line-height: 1;
   width: 100%;
   border: 1px solid $maingrey;
-  padding: $space-xs;
+  padding: $spxs;
   color: $textcolor;
   background: darken($lightcolor, 5%);
   border-radius: 0; //reset border radius for ios
@@ -62,11 +62,11 @@ select {
 
 // Checkbox + Radio
 .checkbox--custom {
-  @include checkbox--custom($maincolor);
+  @include checkbox--custom($primary);
 }
 
 .radio--custom {
-  @include checkbox--custom($maincolor);
+  @include checkbox--custom($primary);
   @include radio--custom();
 }
 

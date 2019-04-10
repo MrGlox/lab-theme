@@ -1,14 +1,14 @@
 body {
-  font-size: $base-fz;
-  line-height: $base-lh;
-  font-family: $customfont-1;
+  font-size: $fsz;
+  line-height: $lh;
+  font-family: $mainfont;
   color: $textcolor;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 
   .fonts-loading & {
-    font-family: $font-sansserif;
+    font-family: $sans-serif;
   }
 }
 
@@ -26,12 +26,12 @@ a {
 
 @for $i from 1 through 6 {
   h#{$i} {
-    line-height: $heading-line-height;
-    font-size: $heading-font-size - ($i - 1) * 2px;
-    font-family: $customfont-2;
+    line-height: $hlh;
+    font-size: $hfsz - ($i - 1) * 2px;
+    font-family: $subfont;
 
     .fonts-loading & {
-      font-family: $font-sansserif;
+      font-family: $sans-serif;
     }
   }
 }
@@ -67,7 +67,7 @@ table,
 address,
 fieldset,
 figure {
-  margin: 0 0 $space 0;
+  margin: 0 0 $sp 0;
 }
 
 /* Wysiwyg style
@@ -77,13 +77,13 @@ hr {
   border: 0;
   height: 1px;
   background: $maingrey;
-  margin: $space 0;
+  margin: $sp 0;
 }
 
 blockquote {
   border-left: 5px solid $maingrey;
-  padding: $space;
-  margin: 0 0 $space 0;
+  padding: $sp;
+  margin: 0 0 $sp 0;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
 
@@ -101,25 +101,25 @@ small {
 }
 
 table {
-  margin: $space 0;
+  margin: $sp 0;
   width: 100%;
-  border: $base-border;
+  border: $brd;
   border-collapse: collapse;
   border-left: 0;
-  border-radius: $base-border-radius;
+  border-radius: $br;
 
   th {
-    padding: $space-xs;
-    border-left: 1px solid $base-border-color;
+    padding: $spxs;
+    border-left: 1px solid $brdc;
     border-top: 0;
     vertical-align: top;
     text-align: left;
   }
 
   td {
-    padding: $space-xs;
-    border-top: 1px solid $base-border-color;
-    border-left: 1px solid $base-border-color;
+    padding: $spxs;
+    border-top: 1px solid $brdc;
+    border-left: 1px solid $brdc;
     vertical-align: top;
     text-align: left;
   }
@@ -127,7 +127,7 @@ table {
 
 address {
   display: block;
-  margin-bottom: $space;
+  margin-bottom: $sp;
   font-style: normal;
   line-height: 20px;
 }
@@ -139,7 +139,7 @@ abbr {
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
-  border-bottom: 1px dotted $base-border-color;
+  border-bottom: 1px dotted $brdc;
 }
 
 big {
@@ -152,8 +152,8 @@ code {
   background-color: $maingrey;
   border: 1px solid $darkcolor;
   font-family: monospace;
-  font-size: $base-fz;
-  border-radius: $base-border-radius;
+  font-size: $fsz;
+  border-radius: $br;
 }
 
 s,
@@ -180,13 +180,13 @@ samp {
 
 pre {
   display: block;
-  padding: $space-xs;
-  margin: 0 0 $space;
+  padding: $spxs;
+  margin: 0 0 $sp;
   @include word-wrap(break-all);
   white-space: pre-wrap;
   background-color: $maingrey;
   border: 1px solid $darkcolor;
-  border-radius: $base-border-radius;
+  border-radius: $br;
 }
 
 q {
