@@ -1,5 +1,6 @@
+$src: "~/resources/assets";
+
 // Dynamic paths
-$images: "../images";
-$icons: "../images/icons";
-$src: "../../src";
-$fonts: "../fonts";
+$images: "#{$src}/images";
+$icons: "#{$src}/images/icons";
+$fonts: "#{$src}/fonts";

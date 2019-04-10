@@ -113,6 +113,7 @@ module.exports = {
     "declaration-property-value-whitelist": null,
     "font-family-name-quotes": null,
     "font-family-no-duplicate-names": null,
+    "font-family-no-missing-generic-family-keyword": null,
     "font-weight-notation": null,
     "function-blacklist": null,
     "function-calc-no-unspaced-operator": null,

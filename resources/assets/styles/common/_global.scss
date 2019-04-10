@@ -4,42 +4,41 @@
  */
 $susy: (
 	debug: (image: show-columns),
-	'min-width': 0px,
-	'columns': susy-repeat(12),
-	'gutters': 0.25,
+	'min-width': 0,
+	'columns': susy-repeat(6),
+	'gutters': 0.5rem,
 	'spread': 'wide',
 	'container-spread': 'wider',
 );
 
-// From 480px and more
-$md: (
-	'min-width': 768px,
+// From 768px and more
+$sm: (
+	'min-width': em(768px),
 	'columns': susy-repeat(12)
 );
 
 // From 1240px and more
-$lg: (
-	'min-width': 1240px,
+$md: (
+	'min-width': em(1240),
 	'columns': susy-repeat(24)
 );
 
-/**
- * Responsive breakpoints
- */
+// /**
+//  * Responsive breakpoints
+//  */
+// $breakpoints: (
+// 	xsm: em(480),
+// 	sm: em(768),
+// 	md: em(1024),
+// 	lg: em(1260),
+// 	xlg: em(1440)
+// );
 
- $breakpoints: (
-	xsm: em(480),
-	sm: em(768),
-	md: em(1024),
-	lg: em(1260),
-	xlg: em(1440)
-);
-
-@mixin breakpoints($breakpoint) {
-	@media screen and (min-width: map-get($map: $breakpoints, $key: $breakpoint)) {
-		@content;
-	}
-}
+// @mixin breakpoints($breakpoint) {
+// 	@media screen and (min-width: map-get($map: $breakpoints, $key: $breakpoint)) {
+// 		@content;
+// 	}
+// }
 
 @mixin container {
 	max-width: 950px + $spxs*2;
@@ -66,23 +65,24 @@ $lg: (
 /**
  * Susy mixins
  */
-@mixin susy-use($config) {
-	$config: susy-compile($config);
-	$global: $susy;
+@mixin susy-at($config) {
+  $config: susy-compile($config);
+  $global: $susy;
 	$susy: map-merge($susy, $config) !global;
-	$susy: $global !global;
 
-	@content;
+  @content;
+
+	$susy: $global !global;
 }
 
-@mixin media($config) {
+@mixin breakpoints($config) {
 	$config: susy-compile($config);
 	$min: map-get($config, 'min-width');
 	$min: if($min, '(min-width: #{$min})', null);
 	$query: $min;
 
 	@media #{$query} {
-		@include susy-use($config) {
+		@include susy-at($config) {
 			@content;
 		}
 	}
