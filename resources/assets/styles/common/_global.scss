@@ -3,7 +3,7 @@
  * Go to layouts/_default.scss for example
  */
 $susy: (
-	debug: (image: show-columns),
+	// debug: (image: show-columns),
 	'min-width': 0,
 	'columns': susy-repeat(6),
 	'gutters': 0.5rem,
@@ -11,34 +11,31 @@ $susy: (
 	'container-spread': 'wider',
 );
 
-// // From 768px and more
-// $sm: (
-// 	'min-width': em(768px),
-// 	'columns': susy-repeat(12)
-// );
-
-// // From 1240px and more
-// $md: (
-// 	'min-width': em(1240),
-// 	'columns': susy-repeat(24)
-// );
-
-// /**
-//  * Responsive breakpoints
-//  */
-// $breakpoints: (
-// 	xsm: em(480),
-// 	sm: em(768),
-// 	md: em(1024),
-// 	lg: em(1260),
-// 	xlg: em(1440)
-// );
-
-// @mixin breakpoints($breakpoint) {
-// 	@media screen and (min-width: map-get($map: $breakpoints, $key: $breakpoint)) {
-// 		@content;
-// 	}
-// }
+/**
+ * Responsive breakpoints
+ */
+$breakpoints: (
+	xsm: (
+		'min-width': 480px,
+		'columns': susy-repeat(6)
+	),
+	sm: (
+		'min-width': 768px,
+		'columns': susy-repeat(12)
+	),
+	md: (
+		'min-width': 1024px,
+		'columns': susy-repeat(24)
+	),
+	lg: (
+		'min-width': 1280px,
+		'columns': susy-repeat(24)
+	),
+	xlg: (
+		'min-width': 1440px,
+		'columns': susy-repeat(24)
+	)
+);
 
 @mixin container {
 	max-width: 950px + $spxs*2;
@@ -47,43 +44,43 @@ $susy: (
 	margin: 0 auto;
 }
 
-// /**
-//  * Span mixins
-//  */
-// @mixin span($span, $config: $susy) {
-// 	width: span($span, $config);
+/**
+ * Span mixins
+ */
+@mixin span($span, $config: $susy) {
+	width: span($span, $config);
 
-// 	@if index($span, 'last') {
-// 		float: right;
-// 		// margin-right: 0; if you want an explicit reset
-// 	} @else {
-// 		float: left;
-// 		margin-right: gutter();
-// 	}
-// }
+	@if index($span, 'last') {
+		float: right;
+		// margin-right: 0; if you want an explicit reset
+	} @else {
+		float: left;
+		margin-right: gutter();
+	}
+}
 
-// /**
-//  * Susy mixins
-//  */
-// @mixin susy-at($config) {
-//   $config: susy-compile($config);
-//   $global: $susy;
-// 	$susy: map-merge($susy, $config) !global;
+/**
+ * Susy mixins
+ */
+@mixin susy-at($config) {
+  $config: susy-compile($config);
+  $global: $susy;
+	$susy: map-merge($susy, $config) !global;
 
-//   @content;
+  @content;
 
-// 	$susy: $global !global;
-// }
+	$susy: $global !global;
+}
 
-// @mixin breakpoints($config) {
-// 	$config: susy-compile($config);
-// 	$min: map-get($config, 'min-width');
-// 	$min: if($min, '(min-width: #{$min})', null);
-// 	$query: $min;
+@mixin breakpoints($breakpoint) {
+	$config: susy-compile(map-get($map: $breakpoints, $key: $breakpoint));
+	$min: map-get($config, 'min-width');
+	$min: if($min, '(min-width: #{$min})', null);
+	$query: $min;
 
-// 	@media #{$query} {
-// 		@include susy-at($config) {
-// 			@content;
-// 		}
-// 	}
-// }
+	@media #{$query} {
+		@include susy-at($config) {
+			@content;
+		}
+	}
+}
