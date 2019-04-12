@@ -74,6 +74,7 @@
   },
   "dependencies": {
     "baffle": "^0.3.6",
+    "jquery": "^3.3.1",
     "popper.js": "^1.14.7",
     "susy": "^3.0.5"
   }

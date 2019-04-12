@@ -3,31 +3,44 @@
  */
 
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: $darkcolor;
+
+  &:after {
+    @include pseudo__content;
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    top: 0; left: 0;
+    opacity: .5;
+    background-image: url("#{$images}/bg/plus.svg");
+    background-position: center top;
+    background-attachment: fixed;
+  }
 }
+
 *, *:before, *:after {
 	box-sizing: inherit;
 }
 
+body {
+  min-height: 100vh;
+  overflow: hidden;
+}
 
 .main {
   position: relative;
   z-index: z('main__content');
-  background: susy-svg-grid() no-repeat scroll;
-
 }
 
 .container {
   padding: 0 10px;
-
   @include container;
 }
 
-.content {
-}
+.content {}
 
-.sidebar {
-}
+.sidebar {}
 
 [tabindex]:focus {
   outline: none;

@@ -3,7 +3,7 @@
  * Go to layouts/_default.scss for example
  */
 $susy: (
-	debug: (image: show-columns),
+	// debug: (image: show-columns),
 	'min-width': 0,
 	'columns': susy-repeat(6),
 	'gutters': 0.5rem,
@@ -11,34 +11,31 @@ $susy: (
 	'container-spread': 'wider',
 );
 
-// From 768px and more
-$sm: (
-	'min-width': em(768px),
-	'columns': susy-repeat(12)
+/**
+ * Responsive breakpoints
+ */
+$breakpoints: (
+	xsm: (
+		'min-width': 480px,
+		'columns': susy-repeat(6)
+	),
+	sm: (
+		'min-width': 768px,
+		'columns': susy-repeat(12)
+	),
+	md: (
+		'min-width': 1024px,
+		'columns': susy-repeat(24)
+	),
+	lg: (
+		'min-width': 1280px,
+		'columns': susy-repeat(24)
+	),
+	xlg: (
+		'min-width': 1440px,
+		'columns': susy-repeat(24)
+	)
 );
-
-// From 1240px and more
-$md: (
-	'min-width': em(1240),
-	'columns': susy-repeat(24)
-);
-
-// /**
-//  * Responsive breakpoints
-//  */
-// $breakpoints: (
-// 	xsm: em(480),
-// 	sm: em(768),
-// 	md: em(1024),
-// 	lg: em(1260),
-// 	xlg: em(1440)
-// );
-
-// @mixin breakpoints($breakpoint) {
-// 	@media screen and (min-width: map-get($map: $breakpoints, $key: $breakpoint)) {
-// 		@content;
-// 	}
-// }
 
 @mixin container {
 	max-width: 950px + $spxs*2;
@@ -75,8 +72,8 @@ $md: (
 	$susy: $global !global;
 }
 
-@mixin breakpoints($config) {
-	$config: susy-compile($config);
+@mixin breakpoints($breakpoint) {
+	$config: susy-compile(map-get($map: $breakpoints, $key: $breakpoint));
 	$min: map-get($config, 'min-width');
 	$min: if($min, '(min-width: #{$min})', null);
 	$query: $min;
