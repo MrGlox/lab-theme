@@ -10,7 +10,7 @@ html {
     @include pseudo__content;
     position: fixed;
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     top: 0; left: 0;
     opacity: .5;
     background-image: url("#{$images}/bg/plus.svg");
@@ -26,6 +26,11 @@ html {
 body {
   min-height: 100vh;
   overflow: hidden;
+
+  & > canvas {
+    position: absolute;
+    top: 0; left: 0;
+  }
 }
 
 .main {
