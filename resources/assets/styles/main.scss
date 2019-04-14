@@ -15,5 +15,10 @@
 /** Import everything from each folders */
 @import "./components/**/*";
 @import "./layouts/**/*";
-@import "./patterns/**/*";
-@import "./pages/**/*";
+
+@import "patterns/lazyload";
+@import "patterns/content";
+
+@import "pages/home";
+@import "pages/404";
+@import "pages/print";

@@ -28,7 +28,7 @@ a {
   h#{$i} {
     line-height: $hlh;
     font-size: $hfsz - ($i - 1) * 2px;
-    font-family: $subfont;
+    font-family: $mainfont;
 
     .fonts-loading & {
       font-family: $sans-serif;

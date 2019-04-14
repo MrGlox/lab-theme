@@ -1,0 +1,39 @@
+.content {
+  $el: &;
+  height: 100%;
+
+  #{$el}__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include breakpoints(lg){
+      margin-top: -9vh;
+      margin-left: calc(#{span(3)} - #{gutter()});
+      width: span(12);
+    }
+  }
+
+  #{$el}__title {
+    font-size: 36px;
+  }
+
+  #{$el}__entry {
+    margin-bottom: $sp;
+
+    & > p {
+      font-size: $fszl;
+      margin-bottom: $spxs;
+      line-height: 26px;
+      letter-spacing: 1px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .bold {
+      font-weight: 700;
+    }
+  }
+}

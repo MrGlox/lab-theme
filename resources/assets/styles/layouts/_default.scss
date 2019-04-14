@@ -30,20 +30,23 @@ body {
   & > canvas {
     position: absolute;
     top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
   }
 }
 
 .main {
   position: relative;
   z-index: z('main__content');
+  min-height: 100vh;
+  display: flex;
+  justify-content: stretch;
 }
 
 .container {
   padding: 0 10px;
   @include container;
 }
-
-.content {}
 
 .sidebar {}
 
